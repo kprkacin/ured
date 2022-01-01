@@ -1,21 +1,26 @@
+import { smoothScroll } from "../../helpers/helpers";
+
 export const Hero: React.FC = () => {
   return (
-    <div className="py-20 mx-auto lg:py-1">
+    <div className="py-16 mx-auto ">
       <div className="grid grid-cols-4">
-        <div className="flex flex-col items-start justify-center col-span-4 lg:col-span-1">
+        <div className="flex flex-col items-start justify-center col-span-4 mt-10 md:row-start-2 lg:row-start-1 lg:col-span-1">
           <h1 className="text-xl font-semibold text-white lg:text-2xl">
-            Odvjetnički ured Zoran Švaco  u pretežitom dijelu bavi se područjem
+            Odvjetnički ured Zoran Švaco u pretežitom dijelu bavi se područjem
             građanskog prava te pruža stručnu pravnu pomoć fizičkim i pravnim
             osobama.
           </h1>
-          <button className="p-2 mt-10 text-white transition-all duration-500 border hover:opacity-70 border-gold hover:bg-gold">
+          <button
+            onClick={() => smoothScroll("consultation")}
+            className="p-2 mt-10 text-white transition-all duration-500 border hover:opacity-70 border-gold hover:bg-gold"
+          >
             Konzultacije
           </button>
         </div>
-        <div className="col-span-4 lg:col-span-2">
+        <div className="col-span-4 md:col-span-2">
           <img className="w-full h-full" src="./lawyer.png" alt="Laywer.png" />
         </div>
-        <div className="flex flex-col items-start justify-center col-span-4 pt-8 lg:pt-0 lg:col-span-1">
+        <div className="flex flex-col items-start justify-center col-span-4 pt-8 lg:pt-0 md:col-span-2 lg:col-span-1">
           <div className="flex flex-row">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +41,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col ">
               <p className="text-white ">Radno vrijeme sa strankama</p>
               <h1 className="font-semibold text-white uppercase ">
-                Mon - Fri (8:00- 20:00)
+                Pon - Pet (7:30 - 13:30)
               </h1>
             </div>
           </div>

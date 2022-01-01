@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import emailjs from "emailjs-com";
 import { useRef } from "react";
+import { SectionHeader } from "../SectionHeader";
 
 export const ContactForm: React.FC = () => {
   const form = useRef<HTMLFormElement | null>(null);
@@ -47,13 +48,22 @@ export const ContactForm: React.FC = () => {
   };
   return (
     <div className="flex flex-col justify-between mx-auto md:flex-row my-14">
-      <div className="w-full mb-10 text-white md:w-1/2">
-        <h1 className="pb-5 text-2xl font-semibold">Zatražite konzultacije</h1>
-        <p>
-          Ukoliko ste zainteresirani za pravnu pomoć u Odvjetničkom uredu Zoran
-          Švaco, ispunite formular i pošaljite opis problema putem online forme.
-          Javit ćemo Vam se u najkraćem mogućem roku.
-        </p>
+      <div className="w-full md:w-1/2">
+        <SectionHeader
+          title="Zatražite Konzultacije"
+          id="consultation"
+          headerClassName="w-full md:w-3/6 lg:w-4/6"
+          className="flex-grow mb-4"
+        />
+        <div className="w-full mb-10 text-white md:w-4/6">
+          <p>
+            Ukoliko ste zainteresirani za pravnu pomoć u Odvjetničkom uredu
+            Zoran Švaco, ispunite formular i pošaljite opis problema putem
+            online forme.
+          </p>
+          <br />
+          <p>Javit ćemo Vam se u najkraćem mogućem roku.</p>
+        </div>
       </div>
       <div className="w-full bg-white md:w-1/2">
         <Formik
@@ -134,7 +144,7 @@ export const ContactForm: React.FC = () => {
                     className="block mb-2 text-sm font-bold text-gray-700"
                     htmlFor="phone"
                   >
-                    Message
+                    Poruka
                   </label>
                   <Field
                     as={"textarea"}
@@ -148,8 +158,12 @@ export const ContactForm: React.FC = () => {
                 </div>
 
                 <div className="col-span-2 justify-self-end ">
-                  <button type="submit" disabled={isSubmitting}>
-                    Submit
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="p-2 px-6 text-black transition-all duration-500 border hover:opacity-70 border-gold hover:bg-gold"
+                  >
+                    Pošalji
                   </button>
                 </div>
               </div>

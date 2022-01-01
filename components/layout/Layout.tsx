@@ -6,11 +6,12 @@ export const Layout: React.FC = ({ children }) => {
   return (
     <div className=" bg-darkgrey font-body scroll-smooth">
       <Head>
-        <title>{"ured"}</title>
+        <title>{"Odvjetnički ured Zoran Švaco"}</title>
+        <link rel="icon" href="../../public/favicon.ico" />
       </Head>
       <Header />
       <main>
-        <div className="container px-6 mx-auto">{children}</div>
+        <div className="max-w-[90%] px-6 mx-auto">{children}</div>
       </main>
       <Footer />
     </div>

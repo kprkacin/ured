@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavbarItems } from "./NavbarItems";
 import clsx from "clsx";
+import { smoothScroll } from "../../helpers/helpers";
 
 export const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -37,19 +38,7 @@ export const Navbar: React.FC = () => {
     if (setShowMenu) {
       setShowMenu(false);
     }
-    if (!id) {
-      window.scrollTo({ behavior: "smooth", top: 0 });
-      return;
-    }
-    const e = document.getElementById(id);
-    if (!e) {
-      return;
-    }
-    window &&
-      window.scrollTo({
-        behavior: "smooth",
-        top: e.offsetTop - 100,
-      });
+    smoothScroll(id);
   };
 
   return (
@@ -59,7 +48,7 @@ export const Navbar: React.FC = () => {
       )}
     >
       <div className="container flex justify-between px-6 py-3 mx-auto">
-        <div className="z-50 flex w-4/12">
+        <div className="z-50 flex w-8/12 md:w-4/12">
           <div className="flex lg:hidden">
             <button
               type="button"

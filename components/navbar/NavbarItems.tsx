@@ -27,6 +27,12 @@ export const NavbarItems: React.FC<NavbarItemsProps> = (props) => {
       >
         Kako do nas
       </a>
+      <a
+        className="my-1 font-medium cursor-pointer text-md lg:mx-4 lg:my-0 hover:text-gold"
+        onClick={scrollIntoElement("consultation")}
+      >
+        Konzultacije
+      </a>
     </>
   );
 };

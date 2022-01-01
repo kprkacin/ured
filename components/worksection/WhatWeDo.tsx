@@ -6,9 +6,10 @@ import { SectionHeader } from "../SectionHeader";
 export const WhatWeDo: React.FC = () => {
   const arr = [1, 2, 3, 4, 5, 6];
   return (
-    <div className="grid grid-cols-3 mx-auto justify-items-center lg:grid-cols-6">
+    <div className="grid grid-cols-2 mx-auto md:grid-cols-3 justify-items-center lg:grid-cols-6">
       <SectionHeader
         className="mb-6 col-span-full"
+        headerClassName="sm:w-4/6 "
         title="Čime se bavimo"
         id="work"
       />
@@ -52,9 +53,11 @@ export const WhatWeDo: React.FC = () => {
         <line x1="13" y1="8" x2="15" y2="8" />
         <line x1="13" y1="12" x2="15" y2="12" />{" "}
       </Card>
-      <h1 className="text-2xl font-semibold text-white p-14 col-span-full">
-        Cime se bavimo
-      </h1>
+      <h2 className="px-6 text-xl font-normal text-white py-14 md: p-14 md:text-justify col-span-full">
+        U navedenim pravnim područjima Odvjetnički ured Zoran Švaco pruža pravnu
+        pomoć u svim fazama rješavanja nastalih spornih situacija, kako pred
+        sudom, tako i pred drugim državnim tijelima i institucijama.
+      </h2>
       <Card title="Ovršno pravo">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M8 9l5 5v7h-5v-4m0 4h-5v-7l5 -5m1 1v-6a1 1 0 0 1 1 -1h10a1 1 0 0 1 1 1v17h-8" />

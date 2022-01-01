@@ -54,14 +54,19 @@ export const Card: React.FC<CardProps> = (props) => {
       ref={ref}
       className=" w-full flex flex-grow transition-all duration-[1500ms] ease-in-out opacity-0 "
     >
-      <div className="flex flex-col items-center w-full transition-all duration-300 bg-white border-b border-r py-14 px-auto group hover:bg-gold hover:text-white border-lightgrey">
-        <h1 className="text-xl font-medium text-center">{title}</h1>
+      <div className="flex flex-col items-center justify-between w-full py-8 transition-all duration-300 bg-white border-b border-r overflow-clip px-auto group hover:bg-gold hover:text-white border-lightgrey">
+        <h1
+          style={{ wordBreak: "break-word" }}
+          className="mx-2 text-xl font-medium text-center break-words "
+        >
+          {title}
+        </h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="80"
           height="80"
           viewBox="0 0 24 24"
-          className=" transition-all duration-300 stroke-[#D7AF75] group-hover:stroke-white"
+          className=" transition-all duration-300 my-4 stroke-[#D7AF75] group-hover:stroke-white"
           strokeWidth="1.5"
           stroke=""
           fill="none"
