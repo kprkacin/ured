@@ -18,11 +18,12 @@ export const Card: React.FC<CardProps> = (props) => {
 
     const visibleClasses = ["visible", "opacity-1"];
     const invisibleClasses = ["invisible", "opacity-0", "translate-y-[10vh]"];
+    const element = document.getElementsByClassName("customNavClass")[0];
 
     const top = ref.current.getBoundingClientRect().top;
     if (
-      top + ref.current.clientHeight - 50 >= 0 &&
-      top - ref.current.clientHeight + 50 <= (window ? window.innerHeight : 0)
+      top + ref.current.clientHeight - element.clientHeight >= 0 &&
+      top <= (window ? window.innerHeight : 0)
     ) {
       if (!ref.current.classList.contains("opacity-1")) {
         ref.current.classList.add(...visibleClasses);
@@ -51,10 +52,10 @@ export const Card: React.FC<CardProps> = (props) => {
   return (
     <div
       ref={ref}
-      className=" w-full transition-all duration-[1500ms] ease-in-out opacity-0 "
+      className=" w-full flex flex-grow transition-all duration-[1500ms] ease-in-out opacity-0 "
     >
       <div className="flex flex-col items-center w-full transition-all duration-300 bg-white border-b border-r py-14 px-auto group hover:bg-gold hover:text-white border-lightgrey">
-        <h1 className="text-2xl font-medium">{title}</h1>
+        <h1 className="text-xl font-medium text-center">{title}</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="80"

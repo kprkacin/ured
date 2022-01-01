@@ -4,8 +4,9 @@ export const Hero: React.FC = () => {
       <div className="grid grid-cols-4">
         <div className="flex flex-col items-start justify-center col-span-4 lg:col-span-1">
           <h1 className="text-xl font-semibold text-white lg:text-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
-            beatae.
+            Odvjetnički ured Zoran Švaco  u pretežitom dijelu bavi se područjem
+            građanskog prava te pruža stručnu pravnu pomoć fizičkim i pravnim
+            osobama.
           </h1>
           <button className="p-2 mt-10 text-white transition-all duration-500 border hover:opacity-70 border-gold hover:bg-gold">
             Konzultacije
@@ -58,7 +59,10 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col ">
               <p className="text-white ">Telefon/fax:</p>
               <h1 className="font-semibold text-white uppercase ">
-                +0123 456 789
+                099/6735-700
+              </h1>
+              <h1 className="font-semibold text-white uppercase ">
+                048/853-706
               </h1>
             </div>
           </div>
@@ -82,7 +86,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col ">
               <p className="text-white ">Mail</p>
               <h1 className="font-semibold text-white uppercase ">
-                hello@ured.com
+                zoran.svaco@gmail.com
               </h1>
             </div>
           </div>

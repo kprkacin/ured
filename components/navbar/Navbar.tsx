@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavbarItems } from "./NavbarItems";
 import clsx from "clsx";
 
@@ -32,6 +32,25 @@ export const Navbar: React.FC = () => {
       window.removeEventListener("scroll", setHeroRibbonTopOffset);
     };
   }, []);
+
+  const scrollIntoElement = (id?: string) => () => {
+    if (setShowMenu) {
+      setShowMenu(false);
+    }
+    if (!id) {
+      window.scrollTo({ behavior: "smooth", top: 0 });
+      return;
+    }
+    const e = document.getElementById(id);
+    if (!e) {
+      return;
+    }
+    window &&
+      window.scrollTo({
+        behavior: "smooth",
+        top: e.offsetTop - 100,
+      });
+  };
 
   return (
     <nav
@@ -75,14 +94,17 @@ export const Navbar: React.FC = () => {
               />
             </button>
           </div>
-          <a className="w-full lg:w-1/2" href="#">
+          <a
+            className="w-full cursor-pointer lg:w-1/2"
+            onClick={scrollIntoElement()}
+          >
             <img className="" src="/logo.png" alt="Logo.png" />
           </a>
         </div>
 
         <div className="items-center hidden lg:flex">
           <div className="flex flex-col uppercase text-palegrey lg:flex-row lg:mx-6">
-            <NavbarItems />
+            <NavbarItems scrollIntoElement={scrollIntoElement} />
           </div>
         </div>
 
@@ -93,7 +115,7 @@ export const Navbar: React.FC = () => {
         >
           {showMenu && (
             <div className="flex flex-col pt-24 ml-[32px] uppercase text-palegrey">
-              <NavbarItems setShowMenu={setShowMenu} />
+              <NavbarItems scrollIntoElement={scrollIntoElement} />
             </div>
           )}
         </div>
