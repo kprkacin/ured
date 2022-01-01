@@ -64,8 +64,8 @@ export const Card: React.FC<CardProps> = (props) => {
           strokeWidth="1.5"
           stroke=""
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           {children}
         </svg>

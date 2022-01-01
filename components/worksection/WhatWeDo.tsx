@@ -6,7 +6,7 @@ import { SectionHeader } from "../SectionHeader";
 export const WhatWeDo: React.FC = () => {
   const arr = [1, 2, 3, 4, 5, 6];
   return (
-    <div className="grid grid-cols-3 mx-auto  justify-items-center lg:grid-cols-6">
+    <div className="grid grid-cols-3 mx-auto justify-items-center lg:grid-cols-6">
       <SectionHeader
         className="mb-6 col-span-full"
         title="Čime se bavimo"
@@ -16,7 +16,7 @@ export const WhatWeDo: React.FC = () => {
 
       {arr.map((a) => {
         return (
-          <Card title="HELLO">
+          <Card key={a} title="HELLO">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
           </Card>
@@ -27,7 +27,7 @@ export const WhatWeDo: React.FC = () => {
       </h1>
       {arr.map((a) => {
         return (
-          <Card title="HELLO">
+          <Card key={a} title="HELLO">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
           </Card>

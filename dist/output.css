@@ -425,7 +425,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.translate-y-\[4px\], .-translate-y-\[1px\], .-translate-y-\[4px\], .translate-x-full, .-translate-x-full, .translate-y-2, .translate-y-20, .translate-y-\[20vh\], .translate-y-\[10vh\], .-rotate-45, .rotate-45, .scale-0, .scale-100, .transform{
+.translate-y-\[4px\], .-translate-y-\[1px\], .-translate-y-\[4px\], .translate-x-full, .-translate-x-full, .translate-y-\[10vh\], .-rotate-45, .rotate-45, .scale-0, .scale-100{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -492,6 +492,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .fixed{
   position: fixed;
+}
+
+.relative{
+  position: relative;
 }
 
 .top-0{
@@ -662,21 +666,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: var(--tw-transform);
 }
 
-.translate-y-2{
-  --tw-translate-y: 0.5rem;
-  transform: var(--tw-transform);
-}
-
-.translate-y-20{
-  --tw-translate-y: 5rem;
-  transform: var(--tw-transform);
-}
-
-.translate-y-\[20vh\]{
-  --tw-translate-y: 20vh;
-  transform: var(--tw-transform);
-}
-
 .translate-y-\[10vh\]{
   --tw-translate-y: 10vh;
   transform: var(--tw-transform);
@@ -702,14 +691,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: var(--tw-transform);
-}
-
-.transform{
-  transform: var(--tw-transform);
-}
-
-.transform-none{
-  transform: none;
 }
 
 .appearance-none{
@@ -1000,14 +981,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
-.transition{
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .delay-200{
   transition-delay: 200ms;
 }
@@ -1024,28 +997,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 200ms;
 }
 
-.duration-300{
-  transition-duration: 300ms;
-}
-
-.duration-\[2000\]{
-  transition-duration: 2000;
-}
-
-.duration-\[2000ms\]{
-  transition-duration: 2000ms;
-}
-
 .duration-\[1500ms\]{
   transition-duration: 1500ms;
 }
 
-.ease-in-out{
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.duration-300{
+  transition-duration: 300ms;
 }
 
-.ease-out{
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+.ease-in-out{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .after\:col-span-3::after{
@@ -1115,10 +1076,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:opacity-70:hover{
   opacity: 0.7;
-}
-
-.hover\:duration-200:hover{
-  transition-duration: 200ms;
 }
 
 .focus\:text-gray-600:focus{
@@ -1218,10 +1175,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:w-1\/2{
     width: 50%;
-  }
-
-  .lg\:grid-cols-5{
-    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-6{
