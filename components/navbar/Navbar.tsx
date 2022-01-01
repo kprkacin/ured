@@ -98,7 +98,7 @@ export const Navbar: React.FC = () => {
             className="w-full cursor-pointer lg:w-1/2"
             onClick={scrollIntoElement()}
           >
-            <img className="" src="/logo.png" alt="Logo.png" />
+            <img className="" src="./logo.png" alt="Logo.png" />
           </a>
         </div>
 

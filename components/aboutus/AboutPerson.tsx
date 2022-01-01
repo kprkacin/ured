@@ -6,7 +6,7 @@ export const AboutPerson: React.FC = () => {
   return (
     <div className="flex flex-col-reverse items-center justify-between text-center md:text-right md:flex-row">
       <div className="w-4/6 md:w-1/2">
-        <img className="" src="/office.png" alt="Office.png" />
+        <img className="" src="./office.png" alt="Office.png" />
       </div>
       <div className="w-full text-white md:w-1/2">
         <h1 className="pb-5 text-2xl font-semibold">About the person</h1>

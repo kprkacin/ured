@@ -4,7 +4,7 @@ export const Footer: React.FC = ({ children }) => {
       <div className="container grid items-start w-full grid-cols-3 gap-6 px-6 pt-10 mx-auto mb-10 ">
         <div className="w-4/6 col-span-full md:col-span-1 md:w-full lg:w-1/2 lg:col-span-1">
           <div className="w-1/2 md:w-full">
-            <img className="" src="/logo.png" alt="Logo.png" />
+            <img className="" src="./logo.png" alt="Logo.png" />
           </div>
         </div>
         <div className="col-span-full md:col-span-2 lg:col-span-1">
