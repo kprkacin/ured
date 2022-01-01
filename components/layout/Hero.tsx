@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
           </button>
         </div>
         <div className="col-span-4 lg:col-span-2">
-          <img className="w-full h-full" src="/lawyer.png" alt="Laywer.png" />
+          <img className="w-full h-full" src="./lawyer.png" alt="Laywer.png" />
         </div>
         <div className="flex flex-col items-start justify-center col-span-4 pt-8 lg:pt-0 lg:col-span-1">
           <div className="flex flex-row">
