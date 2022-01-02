@@ -161,7 +161,9 @@ export const ContactForm: React.FC = () => {
                     name="area"
                   >
                     {selectOptions.map((so) => (
-                      <option value={so}>{so}</option>
+                      <option key={so} value={so}>
+                        {so}
+                      </option>
                     ))}
                   </Field>
                 </div>
