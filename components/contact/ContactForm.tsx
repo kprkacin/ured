@@ -29,21 +29,21 @@ export const ContactForm: React.FC = () => {
   const validateForm = (values: FormValues) => {
     const errors: any = {};
     if (!values.email) {
-      errors.email = "Required";
+      errors.email = "Email je obvezan";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email address";
+      errors.email = "Neispravna email adresa";
     }
     if (!values.firstName) {
-      errors.firstName = "Required";
+      errors.firstName = "Ime je obvezno";
     }
     if (!values.lastName) {
-      errors.lastName = "Required";
+      errors.lastName = "Prezime je obvezno";
     }
     if (!values.phone) {
-      errors.phone = "Required";
+      errors.phone = "Broj telefona je obvezan";
     }
     if (!values.area) {
-      errors.area = "Required";
+      errors.area = "Pravno područje je obvezno";
     }
     return errors;
   };
@@ -160,8 +160,8 @@ export const ContactForm: React.FC = () => {
                     as="select"
                     name="area"
                   >
-                    {selectOptions.map((so) => (
-                      <option key={so} value={so}>
+                    {selectOptions.map((so, index) => (
+                      <option key={index} value={so}>
                         {so}
                       </option>
                     ))}
