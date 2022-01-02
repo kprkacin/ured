@@ -1,5 +1,3 @@
-import { useCallback, useEffect, useState } from "react";
-import clsx from "clsx";
 import { AboutOffice } from "./AboutOffice";
 import { AboutPerson } from "./AboutPerson";
 import { SectionHeader } from "../SectionHeader";

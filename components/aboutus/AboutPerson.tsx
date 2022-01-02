@@ -1,6 +1,3 @@
-import { useCallback, useEffect, useState } from "react";
-import clsx from "clsx";
-
 export const AboutPerson: React.FC = () => {
   const arr = [1, 2, 3, 4, 5];
   return (

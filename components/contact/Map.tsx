@@ -1,4 +1,3 @@
-import { Navbar } from "../navbar/Navbar";
 import { SectionHeader } from "../SectionHeader";
 
 export const Map: React.FC = () => {

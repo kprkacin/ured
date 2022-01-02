@@ -1,11 +1,4 @@
-import React, {
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import clsx from "clsx";
+import React, { ReactNode, useEffect, useRef } from "react";
 
 export const Card: React.FC<CardProps> = (props) => {
   const { children, title } = props;

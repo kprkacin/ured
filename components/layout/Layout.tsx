@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
+
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
@@ -11,6 +13,7 @@ export const Layout: React.FC = ({ children }) => {
       </Head>
       <Header />
       <main>
+        <Toaster position="top-right" />
         <div className="max-w-[90%] px-6 mx-auto">{children}</div>
       </main>
       <Footer />

@@ -1,30 +1,28 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import emailjs from "emailjs-com";
 import { useRef } from "react";
+import toast from "react-hot-toast";
+
 import { SectionHeader } from "../SectionHeader";
+import { ErrorMessageCustom } from "./ErrorMessageCustom";
 
 export const ContactForm: React.FC = () => {
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = async () => {
     try {
-      await emailjs
-        .sendForm(
-          "service_0n0mqcy",
-          "contact_form",
-          form.current || "",
-          "user_F3XWRNln9CEiSB0e7Kvmi"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      await emailjs.sendForm(
+        "service_0n0mqcy",
+        "contact_form",
+        form.current || "",
+        "user_F3XWRNln9CEiSB0e7Kvmi"
+      );
+      toast.success("Poruka uspješno poslana!");
+      form.current?.reset();
     } catch (error) {
-      console.log(error);
+      toast.error(
+        "Došlo je do poteškoča, molimo pokušajte ponovno ili nas nazovite!"
+      );
     }
   };
 
@@ -43,6 +41,9 @@ export const ContactForm: React.FC = () => {
     }
     if (!values.phone) {
       errors.phone = "Required";
+    }
+    if (!values.area) {
+      errors.area = "Required";
     }
     return errors;
   };
@@ -73,6 +74,7 @@ export const ContactForm: React.FC = () => {
             email: "",
             phone: "",
             message: "",
+            area: "",
           }}
           validate={validateForm}
           onSubmit={(values, { setSubmitting }) => {
@@ -90,12 +92,15 @@ export const ContactForm: React.FC = () => {
                   >
                     Ime
                   </label>
+                  <ErrorMessage
+                    name="firstName"
+                    component={ErrorMessageCustom}
+                  />
                   <Field
                     className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     type="text"
                     name="firstName"
                   />
-                  <ErrorMessage name="firstName" component="div" />
                 </div>
                 <div className="col-span-2 md:col-span-1">
                   <label
@@ -104,12 +109,15 @@ export const ContactForm: React.FC = () => {
                   >
                     Prezime
                   </label>
+                  <ErrorMessage
+                    name="lastName"
+                    component={ErrorMessageCustom}
+                  />
                   <Field
                     className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     type="text"
                     name="lastName"
                   />
-                  <ErrorMessage name="lastName" component="div" />
                 </div>
                 <div className="col-span-2 md:col-span-1">
                   <label
@@ -118,12 +126,12 @@ export const ContactForm: React.FC = () => {
                   >
                     Email
                   </label>
+                  <ErrorMessage name="email" component={ErrorMessageCustom} />
                   <Field
                     className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     type="email"
                     name="email"
                   />
-                  <ErrorMessage name="email" component="div" />
                 </div>
                 <div className="col-span-2 md:col-span-1">
                   <label
@@ -132,12 +140,30 @@ export const ContactForm: React.FC = () => {
                   >
                     Broj Telefona
                   </label>
+                  <ErrorMessage name="phone" component={ErrorMessageCustom} />
                   <Field
                     className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     type="text"
                     name="phone"
                   />
-                  <ErrorMessage name="phone" component="div" />
+                </div>
+                <div className="col-span-2 ">
+                  <label
+                    className="block mb-2 text-sm font-bold text-gray-700"
+                    htmlFor="phone"
+                  >
+                    Pravno područje
+                  </label>
+                  <ErrorMessage name="area" component={ErrorMessageCustom} />
+                  <Field
+                    className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    as="select"
+                    name="area"
+                  >
+                    {selectOptions.map((so) => (
+                      <option value={so}>{so}</option>
+                    ))}
+                  </Field>
                 </div>
                 <div className="col-span-2">
                   <label
@@ -146,6 +172,7 @@ export const ContactForm: React.FC = () => {
                   >
                     Poruka
                   </label>
+                  <ErrorMessage name="message" component={ErrorMessageCustom} />
                   <Field
                     as={"textarea"}
                     className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
@@ -154,9 +181,7 @@ export const ContactForm: React.FC = () => {
                     rows="4"
                     cols="50"
                   />
-                  <ErrorMessage name="message" component="div" />
                 </div>
-
                 <div className="col-span-2 justify-self-end ">
                   <button
                     type="submit"
@@ -181,4 +206,21 @@ interface FormValues {
   email: string;
   phone: string;
   message: string;
+  area: string;
 }
+
+const selectOptions = [
+  "",
+  "Zemljišno-knjižno pravo (nekretnine)",
+  "Ugovorno pravo",
+  " Izvanugovorni odnosi",
+  "Obiteljsko pravo",
+  "Naknade šteta",
+  " Obvezno pravo",
+  " Ovršno pravo",
+  " Prekršajno pravo",
+  " Radno pravo",
+  " Stvarno pravo",
+  " Upravno pravo",
+  " Kazneno pravo]",
+];

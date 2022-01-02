@@ -1,10 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
-import clsx from "clsx";
 import { Card } from "./Card";
 import { SectionHeader } from "../SectionHeader";
 
 export const WhatWeDo: React.FC = () => {
-  const arr = [1, 2, 3, 4, 5, 6];
   return (
     <div className="grid grid-cols-2 mx-auto md:grid-cols-3 justify-items-center lg:grid-cols-6">
       <SectionHeader

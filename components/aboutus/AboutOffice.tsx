@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import clsx from "clsx";
+import { useEffect, useRef } from "react";
 
 export const AboutOffice: React.FC = () => {
   const inputRef = useRef<(HTMLDivElement | null)[]>([null, null, null, null]);
@@ -17,10 +16,6 @@ export const AboutOffice: React.FC = () => {
       const element = document.getElementsByClassName("customNavClass")[0];
       const top = ir.getBoundingClientRect().top;
 
-      console.log({
-        firstEl: top - (element.clientHeight || 0) + ir.clientHeight,
-        secondEl: top,
-      });
       if (
         top - 25 - (element.clientHeight || 0) + ir.clientHeight >= 0 &&
         top + 25 <= window.innerHeight
@@ -34,7 +29,6 @@ export const AboutOffice: React.FC = () => {
         }
       }
     });
-    const positionY = window && window.scrollY;
   };
 
   useEffect(() => {

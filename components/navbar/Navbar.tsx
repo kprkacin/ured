@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { NavbarItems } from "./NavbarItems";
 import clsx from "clsx";
+
+import { NavbarItems } from "./NavbarItems";
 import { smoothScroll } from "../../helpers/helpers";
 
 export const Navbar: React.FC = () => {
