@@ -35,6 +35,31 @@ export const Hero: React.FC = () => {
               strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <circle cx="12" cy="11" r="3" />
+              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+            </svg>
+            <div className="flex flex-col ">
+              <p className="text-white ">Adresa ureda</p>
+              <h1 className="font-semibold text-white uppercase ">
+                Josipa Vargovića 2/l <br />
+                48 000 Koprivnica
+              </h1>
+            </div>
+          </div>
+          <div className="flex flex-row mt-7">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              className="mr-3"
+              height="28"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="#D7AF75"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <circle cx="12" cy="12" r="9" />
               <polyline points="12 7 12 12 15 15" />
             </svg>
@@ -42,6 +67,7 @@ export const Hero: React.FC = () => {
               <p className="text-white ">Radno vrijeme sa strankama</p>
               <h1 className="font-semibold text-white uppercase ">
                 Pon - Pet (7:30 - 13:30)
+                <br />I po dogovoru
               </h1>
             </div>
           </div>
@@ -90,7 +116,7 @@ export const Hero: React.FC = () => {
             </svg>
             <div className="flex flex-col ">
               <p className="text-white ">Mail</p>
-              <h1 className="font-semibold text-white uppercase ">
+              <h1 className="font-semibold text-white">
                 zoran.svaco@gmail.com
               </h1>
             </div>

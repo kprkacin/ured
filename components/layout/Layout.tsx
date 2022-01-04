@@ -9,7 +9,6 @@ export const Layout: React.FC = ({ children }) => {
     <div className=" bg-darkgrey font-body scroll-smooth">
       <Head>
         <title>{"Odvjetnički ured Zoran Švaco"}</title>
-        <link rel="icon" href="../../public/favicon.ico" />
       </Head>
       <Header />
       <main>
